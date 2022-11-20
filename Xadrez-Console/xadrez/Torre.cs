@@ -61,7 +61,7 @@ namespace tabuleiro
                 {
                     break;
                 }
-                pos.linha = pos.linha + 1;
+                pos.coluna = pos.coluna + 1;
             }
 
             //Esquerda
@@ -73,9 +73,8 @@ namespace tabuleiro
                 {
                     break;
                 }
-                pos.linha = pos.linha - 1;
+                pos.coluna = pos.coluna - 1;
             }
-
 
             return mat;
 
