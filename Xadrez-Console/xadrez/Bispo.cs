@@ -1,19 +1,17 @@
 ﻿using tabuleiro;
 
+
 namespace xadrez
 {
-    internal class Rei : Peca
+    internal class Bispo : Peca
     {
-
-
-        public Rei(Tabuleiro tab, Cor cor) : base(tab, cor)
+        public Bispo(Tabuleiro tab, Cor cor) : base(tab, cor)
         {
-
         }
-
         public override string ToString()
         {
-            return "R";
+
+            return "B";
         }
 
         private bool podeMover(Posicao pos)
@@ -28,22 +26,16 @@ namespace xadrez
 
             Posicao pos = new Posicao(0, 0);
 
-            //Acima
-            pos.definirValores(posicao.linha - 1, posicao.coluna);
+            //Noroeste
+            pos.definirValores(posicao.linha - 1, posicao.coluna - 1);
             if (tab.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
+            return mat;
 
             //Nordeste
             pos.definirValores(posicao.linha - 1, posicao.coluna + 1);
-            if (tab.posicaoValida(pos) && podeMover(pos))
-            {
-                mat[pos.linha, pos.coluna] = true;
-            }
-
-            //Direita
-            pos.definirValores(posicao.linha, posicao.coluna + 1);
             if (tab.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
@@ -57,29 +49,8 @@ namespace xadrez
                 mat[pos.linha, pos.coluna] = true;
             }
 
-            //Abaixo
-            pos.definirValores(posicao.linha + 1, posicao.coluna);
-            if (tab.posicaoValida(pos) && podeMover(pos))
-            {
-                mat[pos.linha, pos.coluna] = true;
-            }
-
             //Sudoeste
             pos.definirValores(posicao.linha + 1, posicao.coluna - 1);
-            if (tab.posicaoValida(pos) && podeMover(pos))
-            {
-                mat[pos.linha, pos.coluna] = true;
-            }
-
-            //Esquerda
-            pos.definirValores(posicao.linha, posicao.coluna - 1);
-            if (tab.posicaoValida(pos) && podeMover(pos))
-            {
-                mat[pos.linha, pos.coluna] = true;
-            }
-
-            //Noroeste
-            pos.definirValores(posicao.linha - 1, posicao.coluna - 1);
             if (tab.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
@@ -90,3 +61,5 @@ namespace xadrez
         }
     }
 }
+
+
