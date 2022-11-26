@@ -57,7 +57,7 @@ namespace xadrez
                     mat[pos.linha, pos.coluna] = true;
                 }
 
-                //#jogadaespecial en passant
+                //#jogadaespecial en passant brancas
                 if (posicao.linha == 3)
                 {
                     Posicao esquerda = new Posicao(posicao.linha, posicao.coluna - 1);
@@ -97,7 +97,7 @@ namespace xadrez
                     mat[pos.linha, pos.coluna] = true;
                 }
 
-                //#jogadaespecial en passant
+                //#jogadaespecial en passant pretas
                 if (posicao.linha == 4)
                 {
                     Posicao esquerda = new Posicao(posicao.linha, posicao.coluna - 1);
